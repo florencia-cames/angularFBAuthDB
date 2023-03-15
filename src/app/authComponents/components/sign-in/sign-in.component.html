@@ -1,0 +1,47 @@
+<section class="section banner banner-section">
+  <div class="container">
+    <div class="wrapper">
+      <div class="displayTable">
+        <div class="displayTableCell">
+          <div class="authBlock">
+            <h1>Iniciar Sesión / login</h1>
+
+            <div class="formGroup">
+              <label>Email</label>
+              <input
+                #userName
+                required
+                type="text"
+                placeholder="miemail@example.com"
+              />
+            </div>
+            <div class="formGroup">
+              <label>Contraseña / password</label>
+              <input #userPassword required type="password" />
+            </div>
+
+            <div class="formGroup">
+              <button
+                (click)="authService.SignIn(userName.value, userPassword.value)"
+              >
+                Iniciar sesión / Login
+              </button>
+            </div>
+
+            <div class="forgotPassword">
+              <a routerLink="/recordar-password"
+                >¿Olvidaste la contraseña? / Forgot password</a
+              >
+            </div>
+          </div>
+          <div class="redirectToLogin">
+            <p>
+              ¿Ya tienes una cuenta? / Do you already have an account?
+              <a class="redirect" routerLink="/login">Inicias Sesión / Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

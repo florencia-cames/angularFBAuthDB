@@ -1,0 +1,36 @@
+<section class="section banner banner-section">
+  <div class="container">
+    <div class="wrapper">
+      <div class="displayTable">
+        <div class="displayTableCell">
+          <div class="authBlock">
+            <h3>Gracias por registrarte / Thank you for registering.</h3>
+
+            <div class="formGroup" *ngIf="authService.userData as user">
+              <p class="text-center">
+                Te enviamos un mail de verificación a: / We have sent a
+                verification email to:
+                <strong>{{ user.email }}</strong
+                >.
+              </p>
+              <p class="text-center">
+                Por favor confirma tu email. / Please confirm your email.
+              </p>
+            </div>
+
+            <div class="formGroup">
+              <button
+                type="button"
+                class="btn btnPrimary"
+                (click)="authService.SendVerificationMail()"
+              >
+                <i class="fas fa-redo-alt"></i>
+                Resend verification email.
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
