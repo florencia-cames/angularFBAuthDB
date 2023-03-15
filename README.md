@@ -18,9 +18,9 @@ Por último, la plantilla está preparada para TESTING con Jasmine y Karma, lo q
 
 # Environments
 
-Please note that for security reasons, I am not uploading the environments file. To set up your environments, create a file in the src/environments folder with the following information:
+Please note that for security reasons, I am not uploading the environments file. To set up your environments, create a file in the `src/environments` folder with the following information:
 
-Recuerda que por razones de seguridad no estoy subiendo el archivo de entornos. Para configurar tus entornos, crea un archivo en la carpeta src/environments con la siguiente información:
+Recuerda que por razones de seguridad no estoy subiendo el archivo de entornos. Para configurar tus entornos, crea un archivo en la carpeta `src/environments` con la siguiente información:
 
 ```
 export const environment = {
