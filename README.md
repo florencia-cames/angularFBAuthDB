@@ -1,3 +1,42 @@
+# Template for Angular 15 with Firebase, Auth Service, Guards, Basic DB Interactions, TESTING, and Angular Material.
+
+This is a project template for building Angular 15 applications with Firebase. The template comes with an Auth Service, Guards to protect routes, basic DB interactions, and TESTING to ensure your application is functioning correctly. Additionally, Angular Material has been integrated to provide a more pleasant and consistent user experience.
+
+To get started, make sure you have the necessary dependencies installed and follow the instructions in the README file to set up Firebase and the Auth Service. Examples of how to interact with the database are also included.
+
+Finally, the template is set up for TESTING with Jasmine and Karma, which will allow you to ensure that everything is working correctly in your application.
+
+Start building your Angular 15 application with Firebase today with this template!
+
+# Plantilla para Angular 15 con Firebase, servicio de autenticación, guards, interacciones básicas con la base de datos, TESTING y Angular Material.
+
+Este es un proyecto de plantilla para crear aplicaciones en Angular 15 con Firebase. La plantilla viene con un servicio de autenticación, guards para proteger rutas, interacciones básicas con la base de datos y TESTING para garantizar el correcto funcionamiento de la aplicación. Además, se ha integrado Angular Material para una experiencia de usuario más agradable y coherente.
+
+Para empezar, asegúrate de tener las dependencias necesarias instaladas y sigue las instrucciones en el archivo de README para configurar Firebase y el servicio de autenticación. También se incluyen ejemplos de cómo interactuar con la base de datos.
+
+Por último, la plantilla está preparada para TESTING con Jasmine y Karma, lo que te permitirá asegurarte de que todo funciona correctamente en tu aplicación.
+
+# Environments
+
+Please note that for security reasons, I am not uploading the environments file. To set up your environments, create a file in the src/environments folder with the following information:
+
+Recuerda que por razones de seguridad no estoy subiendo el archivo de entornos. Para configurar tus entornos, crea un archivo en la carpeta src/environments con la siguiente información:
+
+```
+export const environment = {
+  production: false,
+  firebaseConfig: {
+    apiKey: 'xxx',
+    authDomain: 'xxx',
+    projectId: 'xxx',
+    storageBucket: 'xxx',
+    messagingSenderId: 'xxx',
+    appId: 'xxx',
+    measurementId: 'xxx',
+  },
+};
+```
+
 # AngularFBAuthDB
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
