@@ -7,5 +7,12 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent {
+  userNameValue!: string;
+  userPasswordValue!: string;
+
   constructor(public authService: AuthService) {}
+
+  onSubmit() {
+    this.authService.SignIn(this.userNameValue, this.userPasswordValue);
+  }
 }

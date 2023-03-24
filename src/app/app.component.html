@@ -14,10 +14,12 @@
       <a mat-menu-item routerLink="/edit-cv" *ngIf="loggedIn">Edit CV</a>
       <a mat-menu-item routerLink="/new-cv" *ngIf="loggedIn">New CV</a>
       <a mat-menu-item routerLink="/cvs" *ngIf="loggedIn">CVS</a>
-      <a mat-menu-item routerLink="/registrarse" *ngIf="!loggedIn"
+      <a mat-menu-item routerLink="/rauth/egistrarse" *ngIf="!loggedIn"
         >Registrarse</a
       >
-      <a mat-menu-item routerLink="/login" *ngIf="!loggedIn">Iniciar sesión</a>
+      <a mat-menu-item routerLink="/auth/login" *ngIf="!loggedIn"
+        >Iniciar sesión</a
+      >
       <button mat-menu-item (click)="logout()" *ngIf="loggedIn">
         Cerrar sesión
       </button>

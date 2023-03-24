@@ -33,7 +33,7 @@ export class AuthGuard implements CanActivate {
             alert('Debes activar el email para utilizar el servicio');
           }
 
-          this.router.navigate(['/login']);
+          this.router.navigate(['/auth/login']);
           return false;
         }
       })

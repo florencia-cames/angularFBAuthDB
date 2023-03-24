@@ -10,6 +10,7 @@ import firebase from 'firebase/compat/app';
   providedIn: 'root',
 })
 export class AuthService {
+  userData: any;
   user$: Observable<firebase.User | null>;
 
   constructor(
@@ -21,6 +22,7 @@ export class AuthService {
     this.user$ = this.afAuth.authState;
     this.afAuth.authState.subscribe((user) => {
       if (user) {
+        this.userData = user;
         localStorage.setItem('user', JSON.stringify(user));
         JSON.parse(localStorage.getItem('user')!);
       } else {
@@ -36,7 +38,7 @@ export class AuthService {
       .then((result: any) => {
         this.afAuth.authState.subscribe((user: any) => {
           if (user) {
-            this.router.navigate(['/my-account']);
+            this.router.navigate(['/auth/my-account']);
           }
         });
       })
@@ -65,7 +67,7 @@ export class AuthService {
       })
       .catch((err) => {})
       .then(() => {
-        this.router.navigate(['verify-email-address']);
+        this.router.navigate(['/auth/verify-email-address']);
       });
   }
 
@@ -92,7 +94,7 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['login']);
+      this.router.navigate(['/auth/login']);
     });
   }
 
@@ -102,7 +104,7 @@ export class AuthService {
         ?.delete()
         .then(() => {
           window.alert('Cuenta borrada exitosamente');
-          this.router.navigate(['login']);
+          this.router.navigate(['/auth/login']);
         })
         .catch((error: any) => {
           window.alert(

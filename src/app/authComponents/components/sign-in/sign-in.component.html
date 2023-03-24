@@ -6,27 +6,38 @@
           <div class="authBlock">
             <h1>Iniciar Sesión / login</h1>
 
-            <div class="formGroup">
-              <label>Email</label>
-              <input
-                #userName
-                required
-                type="text"
-                placeholder="miemail@example.com"
-              />
-            </div>
-            <div class="formGroup">
-              <label>Contraseña / password</label>
-              <input #userPassword required type="password" />
-            </div>
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+              <mat-form-field class="formGroup" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                  matInput
+                  #userName="ngModel"
+                  required
+                  name="userName"
+                  type="text"
+                  [(ngModel)]="userNameValue"
+                  placeholder="miemail@example.com"
+                />
+              </mat-form-field>
 
-            <div class="formGroup">
-              <button
-                (click)="authService.SignIn(userName.value, userPassword.value)"
-              >
-                Iniciar sesión / Login
-              </button>
-            </div>
+              <mat-form-field class="formGroup" appearance="outline">
+                <mat-label>Contraseña / password</mat-label>
+                <input
+                  matInput
+                  #userPassword="ngModel"
+                  required
+                  name="userPassword"
+                  type="password"
+                  [(ngModel)]="userPasswordValue"
+                />
+              </mat-form-field>
+
+              <div class="formGroup">
+                <button type="submit" mat-raised-button color="primary">
+                  Iniciar sesión / Login
+                </button>
+              </div>
+            </form>
 
             <div class="forgotPassword">
               <a routerLink="/recordar-password"

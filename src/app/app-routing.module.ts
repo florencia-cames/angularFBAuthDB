@@ -14,10 +14,11 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'recordar-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: 'login', component: SignInComponent },
-  { path: 'registrarse', component: SignUpComponent },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./authComponents/auth.module').then((m) => m.AuthModule),
+  },
   { path: '**', redirectTo: '/login' },
 ];
 

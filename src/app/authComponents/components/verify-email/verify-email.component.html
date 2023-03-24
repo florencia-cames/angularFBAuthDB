@@ -20,12 +20,12 @@
 
             <div class="formGroup">
               <button
-                type="button"
-                class="btn btnPrimary"
+                mat-raised-button
+                color="primary"
                 (click)="authService.SendVerificationMail()"
               >
-                <i class="fas fa-redo-alt"></i>
-                Resend verification email.
+                <mat-icon>refresh</mat-icon>
+                Resend verification email
               </button>
             </div>
           </div>
