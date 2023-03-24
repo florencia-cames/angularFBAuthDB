@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ForgotPasswordComponent } from './authComponents/components/forgot-password/forgot-password.component';
-import { SignInComponent } from './authComponents/components/sign-in/sign-in.component';
-import { SignUpComponent } from './authComponents/components/sign-up/sign-up.component';
-import { VerifyEmailComponent } from './authComponents/components/verify-email/verify-email.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
   {
     path: 'my-account',
     component: DashboardComponent,
@@ -19,7 +16,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./authComponents/auth.module').then((m) => m.AuthModule),
   },
-  { path: '**', redirectTo: '/login' },
+  { path: '**', redirectTo: '/auth/login' },
 ];
 
 @NgModule({
