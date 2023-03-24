@@ -41,7 +41,7 @@ export class AuthService {
       .then((result: any) => {
         this.afAuth.authState.subscribe((user: any) => {
           if (user) {
-            this.router.navigate(['/auth/my-account']);
+            this.router.navigate(['/my-account']);
           }
         });
       })

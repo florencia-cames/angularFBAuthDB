@@ -1,5 +1,38 @@
+<h1>My Array:</h1>
+<mat-form-field class="example-full-width">
+  <mat-label>number</mat-label>
+  <input matInput [formControl]="number" type="number" min="0" max="100" />
+</mat-form-field>
+<div class="chips">
+  <mat-chip
+    *ngFor="let numero of myArray$?.numbers"
+    (removed)="borrarNumero(numero)"
+  >
+    {{ numero }}
+    <mat-icon matChipRemove>close</mat-icon>
+  </mat-chip>
+</div>
+<button (click)="addNumber()" mat-raised-button color="primary">
+  Add Number
+</button>
+<div class="divider"></div>
 <p>
-  USer can only acces here if it is logged in / El usuario solo puede acceder
-  aquí si esta logueado
+  Firebase brings us a great option for editing elements within an array called
+  <b>arrayUnion</b>, which allows us to add new elements to an array without
+  having to search for or remove existing elements.<br />
+  However, <b>one limitation</b> of <b>arrayUnion</b> is that it
+  <b>does not accept duplicate values</b>. For example, if you try to add the
+  value 50 to an array twice, only one 50 will be stored.
 </p>
-<button (click)="authService.SignOut()">Logout</button>
+<p>
+  <b>The good thing about using Firebase's array functions</b> is that we have
+  the option to use <b>arrayRemove</b> and only send the number we want to
+  remove, without having to calculate and remove the numbers ourselves from the
+  array.
+</p>
+<h1>Increment value</h1>
+<p>
+  Another utility that we have is called <b>increment</b>, which works similarly
+  to the previous option. We don't need to calculate the value locally, as
+  increment accepts a number and increments the value by that variable.
+</p>

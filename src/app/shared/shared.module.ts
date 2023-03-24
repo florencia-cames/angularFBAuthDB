@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatChipsModule } from '@angular/material/chips';
 @NgModule({
   declarations: [],
   imports: [
@@ -16,6 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatIconModule,
     FormsModule,
     MatSnackBarModule,
+    MatChipsModule,
   ],
   exports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatIconModule,
     FormsModule,
     MatSnackBarModule,
+    MatChipsModule,
   ],
 })
 export class SharedModule {}
