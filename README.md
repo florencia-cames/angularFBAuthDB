@@ -1,20 +1,24 @@
 # Template for Angular 15 with Firebase, Auth Service, Guards, Basic DB Interactions, TESTING, and Angular Material.
 
-This is a project template for building Angular 15 applications with Firebase. The template comes with an Auth Service, Guards to protect routes, basic DB interactions, and TESTING to ensure your application is functioning correctly. Additionally, Angular Material has been integrated to provide a more pleasant and consistent user experience.
+This is a project template for building Angular 15 applications with Firebase. The template comes with an Auth Service, Guards to protect routes, basic DB interactions. Additionally, Angular Material has been integrated to provide a more pleasant and consistent user experience.
 
 To get started, make sure you have the necessary dependencies installed and follow the instructions in the README file to set up Firebase and the Auth Service. Examples of how to interact with the database are also included.
-
-Finally, the template is set up for TESTING with Jasmine and Karma, which will allow you to ensure that everything is working correctly in your application.
 
 Start building your Angular 15 application with Firebase today with this template!
 
 # Plantilla para Angular 15 con Firebase, servicio de autenticación, guards, interacciones básicas con la base de datos, TESTING y Angular Material.
 
-Este es un proyecto de plantilla para crear aplicaciones en Angular 15 con Firebase. La plantilla viene con un servicio de autenticación, guards para proteger rutas, interacciones básicas con la base de datos y TESTING para garantizar el correcto funcionamiento de la aplicación. Además, se ha integrado Angular Material para una experiencia de usuario más agradable y coherente.
+Este es un proyecto de plantilla para crear aplicaciones en Angular 15 con Firebase. La plantilla viene con un servicio de autenticación, guards para proteger rutas, interacciones básicas con la base de datos. Además, se ha integrado Angular Material para una experiencia de usuario más agradable y coherente.
 
 Para empezar, asegúrate de tener las dependencias necesarias instaladas y sigue las instrucciones en el archivo de README para configurar Firebase y el servicio de autenticación. También se incluyen ejemplos de cómo interactuar con la base de datos.
 
-Por último, la plantilla está preparada para TESTING con Jasmine y Karma, lo que te permitirá asegurarte de que todo funciona correctamente en tu aplicación.
+## arrayUnion & arrayRemove
+
+You can find examples of these two functions (arrayRemove and increment) in Firebase's documentation. One limitation that you might encounter when using arrayRemove is that it doesn't allow duplicate values in the array. Similarly, when using increment, you need to be careful not to increment the same value multiple times, as this could result in unexpected behavior. However, these functions can be very useful when working with arrays and numeric values in your Firebase database.
+
+## Increment
+
+(in Progress)
 
 # Environments
 
