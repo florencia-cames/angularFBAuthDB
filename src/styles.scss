@@ -3,6 +3,7 @@
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 body {
   margin: 0;
@@ -123,5 +124,25 @@ body {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+app-sign-in {
+  width: 100%;
+  .wrapper {
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mat-mdc-form-field {
+    width: 100%;
   }
 }

@@ -8,8 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
+    component: SignInComponent,
   },
   {
     path: 'forgot-password',
@@ -20,12 +19,13 @@ const routes: Routes = [
     component: VerifyEmailComponent,
   },
   {
-    path: 'login',
-    component: SignInComponent,
+    path: 'sign-up',
+    component: SignUpComponent,
   },
   {
-    path: 'registrarse',
-    component: SignUpComponent,
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
 ];
 

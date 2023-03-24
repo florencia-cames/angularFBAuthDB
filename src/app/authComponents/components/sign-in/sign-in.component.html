@@ -1,5 +1,5 @@
 <section class="section banner banner-section">
-  <div class="container">
+  <div class="container auth">
     <div class="wrapper">
       <div class="displayTable">
         <div class="displayTableCell">
@@ -40,15 +40,17 @@
             </form>
 
             <div class="forgotPassword">
-              <a routerLink="/recordar-password"
+              <a [routerLink]="['./forgot-password']"
                 >¿Olvidaste la contraseña? / Forgot password</a
               >
             </div>
           </div>
           <div class="redirectToLogin">
             <p>
-              ¿Ya tienes una cuenta? / Do you already have an account?
-              <a class="redirect" routerLink="/login">Inicias Sesión / Login</a>
+              Want to Sign up?
+              <a class="redirect" [routerLink]="['sign-up']"
+                >Sign up / Registrarme</a
+              >
             </p>
           </div>
         </div>
