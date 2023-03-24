@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Injectable, NgZone } from '@angular/core';
 import * as auth from 'firebase/auth';
@@ -5,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +19,8 @@ export class AuthService {
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     public router: Router,
-    public ngZone: NgZone
+    public ngZone: NgZone,
+    private _snackBar: MatSnackBar
   ) {
     this.user$ = this.afAuth.authState;
     this.afAuth.authState.subscribe((user) => {
@@ -43,7 +46,9 @@ export class AuthService {
         });
       })
       .catch((error) => {
-        window.alert(error.message);
+        this._snackBar.open(error.message, '', {
+          duration: environment.snackBardDuration,
+        });
       });
   }
 
@@ -51,11 +56,17 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result: any) => {
-        window.alert('Para acceder a su cuenta debe primero activar su email.');
+        this._snackBar.open(
+          'To access your account you need to first activate your email',
+          '',
+          { duration: environment.snackBardDuration }
+        );
         this.SendVerificationMail();
       })
       .catch((error) => {
-        window.alert(error.message);
+        this._snackBar.open(error.message, '', {
+          duration: environment.snackBardDuration,
+        });
       });
   }
 
@@ -75,17 +86,27 @@ export class AuthService {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
+        this._snackBar.open(
+          'Password reset email sent, check your inbox.',
+          '',
+          { duration: environment.snackBardDuration }
+        );
       })
       .catch((error) => {
-        window.alert(error);
+        this._snackBar.open(error.message, '', {
+          duration: environment.snackBardDuration,
+        });
       });
   }
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     if (user && user.emailVerified == false) {
-      window.alert('Para acceder a su cuenta debe primero activar su email.');
+      this._snackBar.open(
+        'To access your account you need to first activate your email',
+        '',
+        { duration: environment.snackBardDuration }
+      );
       this.SignOut();
     }
     return user !== null && user.emailVerified !== false ? true : false;
@@ -103,13 +124,15 @@ export class AuthService {
       user
         ?.delete()
         .then(() => {
-          window.alert('Cuenta borrada exitosamente');
+          this._snackBar.open('Your account was deleted', '', {
+            duration: environment.snackBardDuration,
+          });
           this.router.navigate(['/auth/login']);
         })
         .catch((error: any) => {
-          window.alert(
-            'Para poder borrar tu cuenta necesitamos que vuelvas a iniciar sesión y hagas click aquí nuevamente, asi nos aseguramos de que seas el dueño de la misma.'
-          );
+          this._snackBar.open(error.message, '', {
+            duration: environment.snackBardDuration,
+          });
         });
     });
   }

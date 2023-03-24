@@ -1,59 +1,53 @@
 <section class="section banner banner-section">
   <div class="container auth">
     <div class="wrapper">
-      <div class="displayTable">
-        <div class="displayTableCell">
-          <div class="authBlock">
-            <h1>Iniciar Sesión / login</h1>
+      <h1>Iniciar Sesión / login</h1>
 
-            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-              <mat-form-field class="formGroup" appearance="outline">
-                <mat-label>Email</mat-label>
-                <input
-                  matInput
-                  #userName="ngModel"
-                  required
-                  name="userName"
-                  type="text"
-                  [(ngModel)]="userNameValue"
-                  placeholder="miemail@example.com"
-                />
-              </mat-form-field>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="formGroup" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            #userName="ngModel"
+            required
+            name="userName"
+            type="text"
+            [(ngModel)]="userNameValue"
+            placeholder="miemail@example.com"
+          />
+        </mat-form-field>
 
-              <mat-form-field class="formGroup" appearance="outline">
-                <mat-label>Contraseña / password</mat-label>
-                <input
-                  matInput
-                  #userPassword="ngModel"
-                  required
-                  name="userPassword"
-                  type="password"
-                  [(ngModel)]="userPasswordValue"
-                />
-              </mat-form-field>
+        <mat-form-field class="formGroup" appearance="outline">
+          <mat-label>Contraseña / password</mat-label>
+          <input
+            matInput
+            #userPassword="ngModel"
+            required
+            name="userPassword"
+            type="password"
+            [(ngModel)]="userPasswordValue"
+          />
+        </mat-form-field>
 
-              <div class="formGroup">
-                <button type="submit" mat-raised-button color="primary">
-                  Iniciar sesión / Login
-                </button>
-              </div>
-            </form>
-
-            <div class="forgotPassword">
-              <a [routerLink]="['./forgot-password']"
-                >¿Olvidaste la contraseña? / Forgot password</a
-              >
-            </div>
-          </div>
-          <div class="redirectToLogin">
-            <p>
-              Want to Sign up?
-              <a class="redirect" [routerLink]="['sign-up']"
-                >Sign up / Registrarme</a
-              >
-            </p>
-          </div>
+        <div class="formGroup">
+          <button type="submit" mat-raised-button color="primary">
+            Iniciar sesión / Login
+          </button>
         </div>
+      </form>
+
+      <div class="forgotPassword">
+        <a [routerLink]="['./forgot-password']"
+          >¿Olvidaste la contraseña? / Forgot password</a
+        >
+      </div>
+      <div class="redirectToLogin">
+        <p>
+          Want to Sign up?
+          <a class="redirect" [routerLink]="['sign-up']"
+            >Sign up / Registrarme</a
+          >
+        </p>
       </div>
     </div>
   </div>

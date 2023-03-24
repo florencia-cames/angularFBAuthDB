@@ -138,11 +138,22 @@ app-sign-in {
   .wrapper {
     max-width: 400px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
   }
 
   .mat-mdc-form-field {
     width: 100%;
   }
+}
+app-sign-up,
+app-forgot-password,
+app-verify-email {
+  width: 100%;
+  .mat-mdc-form-field {
+    width: 100%;
+  }
+}
+a {
+  color: inherit;
 }

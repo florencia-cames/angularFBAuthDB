@@ -1,39 +1,36 @@
 <section class="section banner banner-section">
   <div class="container auth">
     <div class="wrapper">
-      <div class="displayTable">
-        <div class="displayTableCell">
-          <div class="authBlock">
-            <h1>Registrarse</h1>
+      <h1>Sign Up</h1>
+      <mat-form-field class="formGroup" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          #userEmail
+          required
+          type="email"
+          placeholder="miemail@example.com"
+        />
+      </mat-form-field>
+      <mat-form-field class="formGroup" appearance="outline">
+        <mat-label>Contraseña / password</mat-label>
+        <input matInput #userPwd required type="password" />
+      </mat-form-field>
 
-            <div class="formGroup">
-              <label>Email</label>
-              <input
-                #userEmail
-                required
-                type="email"
-                placeholder="miemail@example.com"
-              />
-            </div>
-            <div class="formGroup">
-              <label>Contraseña / Password</label>
-              <input #userPwd required type="password" />
-            </div>
-            <div class="formGroup">
-              <button
-                (click)="authService.SignUp(userEmail.value, userPwd.value)"
-              >
-                Registrarme / Sing Up
-              </button>
-            </div>
-          </div>
-          <div class="redirectToLogin">
-            <p>
-              ¿Ya tienes una cuenta? / Do you already have an account?
-              <a class="redirect" routerLink="/login">Inicias Sesión / Login</a>
-            </p>
-          </div>
-        </div>
+      <div class="formGroup">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="authService.SignUp(userEmail.value, userPwd.value)"
+        >
+          Sing Up
+        </button>
+      </div>
+      <div class="redirectToLogin">
+        <p>
+          Do you already have an account?
+          <a class="redirect" routerLink="/login">Login</a>
+        </p>
       </div>
     </div>
   </div>
