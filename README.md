@@ -14,7 +14,7 @@ Para empezar, asegúrate de tener las dependencias necesarias instaladas y sigue
 
 ## arrayUnion & arrayRemove
 
-You can find examples of these two functions (arrayRemove and increment) in Firebase's documentation. One limitation that you might encounter when using arrayRemove is that it doesn't allow duplicate values in the array. Similarly, when using increment, you need to be careful not to increment the same value multiple times, as this could result in unexpected behavior. However, these functions can be very useful when working with arrays and numeric values in your Firebase database.
+You can find examples of these two functions (arrayUnion and increment) in Firebase's documentation. One limitation that you might encounter when using arrayUnion is that it doesn't allow duplicate values in the array. Similarly, when using increment, you need to be careful not to increment the same value multiple times, as this could result in unexpected behavior. However, these functions can be very useful when working with arrays and numeric values in your Firebase database.
 
 ## Increment
 
