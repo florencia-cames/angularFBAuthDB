@@ -1,6 +1,5 @@
 import { FirebaseService } from './../shared/services/firebase.service';
 import { Component } from '@angular/core';
-
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormControl, Validators } from '@angular/forms';
 export interface NumberArray {

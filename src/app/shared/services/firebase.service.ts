@@ -56,11 +56,23 @@ export class FirebaseService {
       });
   }
 
-  incrementValues() {
-    /* const documentRef = db.collection('myCollection').doc('myDocument');
-const increment = admin.firestore.FieldValue.increment(1);
-documentRef.update({ count: increment })
-  .then(() => console.log('Increment successful!'))
-  .catch(error => console.error('Error incrementing value:', error));*/
+  incrementValues(userId: string, number: number) {
+    // increment values on using firebase Increment
+    const documentRef = this.afs.collection('myArray').doc(userId);
+    if (documentRef) {
+      const increment = firebase.firestore.FieldValue.increment(number);
+      documentRef
+        .update({ count: increment })
+        .then(() =>
+          this.snackBar.open('Item deleted', 'Close', {
+            duration: 3000,
+          })
+        )
+        .catch((error) =>
+          this.snackBar.open(error.message, 'Close', {
+            duration: 3000,
+          })
+        );
+    }
   }
 }
