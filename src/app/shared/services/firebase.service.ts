@@ -58,21 +58,27 @@ export class FirebaseService {
 
   incrementValues(userId: string, number: number) {
     // increment values on using firebase Increment
-    const documentRef = this.afs.collection('myArray').doc(userId);
+    const documentRef: any = this.afs.collection('myArray').doc(userId);
     if (documentRef) {
       const increment = firebase.firestore.FieldValue.increment(number);
       documentRef
         .update({ count: increment })
         .then(() =>
-          this.snackBar.open('Item deleted', 'Close', {
+          this.snackBar.open('Item incrmeented', 'Close', {
             duration: 3000,
           })
         )
-        .catch((error) =>
+        .catch((error: any) =>
           this.snackBar.open(error.message, 'Close', {
             duration: 3000,
           })
         );
+    } else {
+      documentRef.set({ count: number }).then(() =>
+        this.snackBar.open('Item incrmeented', 'Close', {
+          duration: 3000,
+        })
+      );
     }
   }
 }

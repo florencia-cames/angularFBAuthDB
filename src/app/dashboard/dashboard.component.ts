@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormControl, Validators } from '@angular/forms';
 export interface NumberArray {
   numbers: number[];
+  count: number;
 }
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +15,8 @@ export class DashboardComponent {
   number = new FormControl(0, [Validators.required]);
   myArray$!: NumberArray | undefined;
   userId!: string;
+  increment = new FormControl(0, [Validators.required]);
+  incrementedResult!: number;
   constructor(
     private firebaseService: FirebaseService,
     private afAuth: AngularFireAuth
@@ -23,9 +26,16 @@ export class DashboardComponent {
         this.userId = user.uid;
         this.firebaseService.getMyArray(user.uid).subscribe((data) => {
           this.myArray$ = data;
+          this.incrementedResult = data?.count ?? 0;
         });
       }
     });
+  }
+
+  incrementNumber() {
+    if (this.increment.value && this.increment.value > 0) {
+      this.firebaseService.incrementValues(this.userId, this.increment.value);
+    }
   }
 
   addNumber() {

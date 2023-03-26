@@ -36,3 +36,18 @@
   to the previous option. We don't need to calculate the value locally, as
   increment accepts a number and increments the value by that variable.
 </p>
+
+<mat-form-field class="example-full-width">
+  <mat-label>number</mat-label>
+  <input matInput [formControl]="increment" type="number" min="0" max="100" />
+</mat-form-field>
+<div class="divider"></div>
+<button (click)="incrementNumber()" mat-raised-button color="primary">
+  Increment Number
+</button>
+<div class="divider"></div>
+<p>
+  <b>Important:</b> If you want to use the increment function, you must
+  initialize the value to 0 in the database.
+</p>
+<p>Incremented number: {{ incrementedResult }}</p>
